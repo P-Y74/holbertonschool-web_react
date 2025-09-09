@@ -1,10 +1,11 @@
 interface Teacher {
-    readonly firstName: string;
-    readonly lastName: string;
-    fullTimeEmployee: boolean;
-    yearsOfExperience?: number;
-    location: string;
-    [attribute: string]: any;
+  readonly firstName: string;
+  readonly lastName: string;
+  fullTimeEmployee: boolean;
+  yearsOfExperience?: number;
+  location: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [attribute: string]: any;
 }
 
 const teacher3: Teacher = {
@@ -18,7 +19,7 @@ const teacher3: Teacher = {
 console.log(teacher3);
 
 interface Directors extends Teacher {
-    numberOfReports: number;
+  numberOfReports: number;
 }
 
 const director1: Directors = {
@@ -29,3 +30,13 @@ const director1: Directors = {
   numberOfReports: 17,
 };
 console.log(director1);
+
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+const printTeacher: printTeacherFunction = function (firstName: string, lastName: string): string {
+  const first: string = firstName.charAt(0);
+  return `${first}. ${lastName}`;
+}
+console.log(printTeacher("John", "Doe"));
