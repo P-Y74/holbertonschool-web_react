@@ -4,3 +4,4 @@ TypeScript/task_0/.eslintrc.js
 .gitignore
 TypeScript/task_0/package-lock.json
 TypeScript/task_0/package.json
+.vscode/settings.json
